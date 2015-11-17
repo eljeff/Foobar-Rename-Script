@@ -1,11 +1,11 @@
 Smart (folders)
 
-$ascii($lower(%codec%)/$caps2($if($meta_test(album artist),%album artist%/'('%date%')' %album%/$if($meta_test(vinyl track),%vinyl track% - ,$if($meta_test(tracknumber),($num(%tracknumber%,2) - )))%artist% - %title%,%artist%/'('%date%')' %album%/%artist% - $if($meta_test(vinyl track),%vinyl track% - ,$if($meta_test(tracknumber),$num(%tracknumber%,2) - ))%title%)))
+$ascii($lower(%codec%)/$caps2($if($meta_test(album artist),%album artist%/'('%date%')' %album%/$if($meta_test(vinyl track),%vinyl track% - ,$if($meta_test(tracknumber),$num(%tracknumber%,2) - ))%artist% - %title%,%artist%/'('%date%')' %album%/%artist% - $if($meta_test(vinyl track),%vinyl track% - ,$if($meta_test(tracknumber),$num(%tracknumber%,2) - ))%title%)))
 ***
 
 Smart (no folders)
 
-$ascii($caps2($if($meta_test(album artist),$if($meta_test(vinyl track),%vinyl track% - ,$if($meta_test(tracknumber),($num(%tracknumber%,2) - )))%artist% - %title%,%artist% - $if($meta_test(vinyl track),%vinyl track% - ,$if($meta_test(tracknumber),$num(%tracknumber%,2) - ))%title%)))
+$ascii($caps2($if($meta_test(album artist),$if($meta_test(vinyl track),%vinyl track% - ,$if($meta_test(tracknumber),$num(%tracknumber%,2) - ))%artist% - %title%,%artist% - $if($meta_test(vinyl track),%vinyl track% - ,$if($meta_test(tracknumber),$num(%tracknumber%,2) - ))%title%)))
 ***
 
 Playlist
