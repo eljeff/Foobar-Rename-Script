@@ -1,11 +1,11 @@
 Smart (folders)
 
-$ascii($lower(%codec%)/$caps2($if($meta_test(album artist),%album artist%/$if($meta_test(date),'('%date%') ')%album%/$if($meta_test(vinyltrack),%vinyltrack% - ,$if($meta_test(tracknumber),$num(%tracknumber%,2) - ))%artist% - %title%,%artist%/$if($meta_test(date),'('%date%') ')%album%/%artist% - $if($meta_test(vinyltrack),%vinyltrack% - ,$if($meta_test(tracknumber),$num(%tracknumber%,2) - ))%title%)))
+$ascii($lower(%codec%)/$caps2($if($meta_test(album artist),%album artist%/'('%date%')' %album%/ $if($put(tracknum,$if3( [%vinyl track%], [%vinyltrack%], [$num(%tracknumber%,2)])),$get(tracknum)' - ')%artist% - %title%,%artist%/'('%date%')' %album%/%artist% - $if($put(tracknum,$if3( [%vinyl track%], [%vinyltrack%], [$num(%tracknumber%,2)])),$get(tracknum)' - ')%title%)))
 ***
 
 Smart (no folders)
 
-$ascii($caps2($if($meta_test(album artist),$if($meta_test(vinyltrack),%vinyltrack% - ,$if($meta_test(tracknumber),$num(%tracknumber%,2) - ))%artist% - %title%,%artist% - $if($meta_test(vinyltrack),%vinyltrack% - ,$if($meta_test(tracknumber),$num(%tracknumber%,2) - ))%title%)))
+$caps2($if($meta_test(album artist),$if($put(tracknum,$if3( [%vinyl track%], [%vinyltrack%], [$num(%tracknumber%,2)])),$get(tracknum)' - ')%artist% - %title%,%artist% - $if($put(tracknum,$if3( [%vinyl track%], [%vinyltrack%], [$num(%tracknumber%,2)])),$get(tracknum)' - ')%title%)))
 ***
 
 Playlist
