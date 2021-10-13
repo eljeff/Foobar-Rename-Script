@@ -1,6 +1,6 @@
 Smart (folders)
 
-$puts(tracknum,$if3( [%vinyl track%], [%vinyltrack%], [$num(%tracknumber%,2)]))$ascii($lower(%codec%)/$caps2($if($meta_test(album artist),%album artist%/'('%date%')' %album%/[$get(tracknum)' - ']%artist% - %title%,%artist%/'('%date%')' %album%/%artist% - [$get(tracknum)' - ']%title%)))
+$puts(tracknum,$if3([%vinyl track%],[%vinyltrack%],[$num(%tracknumber%,2)],)) $puts(date,$if(%date%,'('%date%') ',)) $ascii($lower(%codec%)/$caps2($if($meta_test(album artist),%album artist%/$get(date)%album%/[$get(tracknum)' - ']%artist% - %title%,%artist%/$get(date)%album%/%artist% - [$get(tracknum)' - ']%title%)))
 ***
 
 Smart (no folders)
