@@ -8,6 +8,11 @@ Smart (no folders)
 $puts(tracknum,$if3( [%vinyl track%], [%vinyltrack%], [$num(%tracknumber%,2)]))$ascii($caps2($if($meta_test(album artist),[$get(tracknum)' - ']%artist% - %title%,%artist% - [$get(tracknum)' - ']%title%)))
 ***
 
+Smart (folders with disc)
+
+$puts(discnum,$if($and(%discnumber%,$greater(%totaldiscs%,1),$not($strstr(%album%,'(CD')),$not($strstr(%album%,'(cd'))),' (CD '$num(%discnumber%,2)')',)) $puts(tracknum,$ascii($if3([%vinyl track%],[%vinyltrack%],[$num(%tracknumber%,2)],))) $puts(date,$ascii($if(%date%,'('$num(%date%,4)') ',))) $puts(sortArtist,$ascii($if(%album artist%,%album artist%,%artist%))) $puts(file,$if($meta_test(album artist),[$get(tracknum)' - ']%artist% - %title%,%artist% - [$get(tracknum)' - ']%title%))  $lower(%codec%)/$ascii($caps2($get(sortArtist)/$get(date)%album%$get(discnum)/$get(file)))
+***
+
 Playlist
 
 $ascii(%list_index% - %artist% - %title%)
